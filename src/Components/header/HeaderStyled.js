@@ -17,4 +17,11 @@ export const HeaderStyled = styled.header`
     line-height: 1.26;
     text-decoration: underline;
   }
+
+  .burgerLogo {
+    width: 40px;
+    height: 40px;
+
+    fill: ${(props) => props.colors.darkColors.main};
+  }
 `;
