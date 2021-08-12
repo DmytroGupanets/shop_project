@@ -1,4 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
+import { removeFromCart } from "../../redux/cart/cartActions";
+import { getCartItems } from "../../redux/cart/cartSelectors";
 import CartListItem from "./cartListItem/CartListItem";
 
 const CartList = ({ cart, removeFromCart, resetCart }) => {
@@ -34,4 +37,8 @@ const CartList = ({ cart, removeFromCart, resetCart }) => {
   );
 };
 
-export default CartList;
+const mapStateToProps = (state) => ({
+  cart: getCartItems(state),
+});
+
+export default connect(mapStateToProps, { removeFromCart })(CartList);

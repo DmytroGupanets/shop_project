@@ -38,7 +38,12 @@ export const createNewOrder = async (order) => {
 export const getAllAdvByCategory = async (category) => {
   try {
     const response = await axios.get(BASE_URL + `/adv/${category}.json`);
-    return response;
+    return response.data
+      ? Object.keys(response.data).map((key) => ({
+          id: key,
+          ...response.data[key],
+        }))
+      : [];
   } catch (error) {
     console.log("error :", error);
   }
