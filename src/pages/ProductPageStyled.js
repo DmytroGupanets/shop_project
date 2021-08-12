@@ -1,16 +1,19 @@
 import styled from "styled-components";
 
-export const HeaderListStyled = styled.ul`
+export const ProductPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 60px;
-  width: 100vw;
-  height: calc(100vh - 60px);
-  background-color: #424242;
+  /* width: 100vw; */
+  /* height: calc(100vh - 60px); */
+  /* background-color: #424242; */
 
-  .headerItem:not(:first-child) {
+  .navList {
+    list-style: none;
+  }
+  .productItem:not(:first-child) {
     margin-top: 30px;
   }
 
@@ -29,21 +32,6 @@ export const HeaderListStyled = styled.ul`
   }
 
   .activeNavLink {
-    color: ${(props) => props.colors.darkColors.active};
-  }
-
-  @media (min-width: 768px) {
-    margin-top: 0;
-    flex-direction: row;
-    background-color: inherit;
-
-    .headerItem:not(:first-child) {
-      margin-top: 0;
-      margin-left: 20px;
-    }
-
-    .navLink {
-      font-weight: 500;
-    }
+    color: ${(props) => props.colors.darkColors.active}:;
   }
 `;
